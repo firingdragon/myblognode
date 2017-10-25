@@ -64,7 +64,7 @@ module.exports = {
     }
     return Post
       .find(query)
-      .populate({ path: 'author', model: 'User' })
+      .populate({ path: 'author', model: 'User' })//用来在ejs获取用户信息(post.author.name===user.name)
       .sort({ _id: -1 })
       .addCreatedAt()
       .addCommentsCount()
